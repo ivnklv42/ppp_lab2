@@ -51,4 +51,18 @@ public class OnlineStore {
     public ArrayList<Order> getOrders() {
         return this.orders;
     }
+
+    public void changeProductTitle(String title, String newTitle) {
+        Product product = products.get(title);
+        product.setTitle(newTitle);
+        products.remove(title);
+        products.put(newTitle, product);
+    }
+
+    public void changeCustomerName(String name, String newName) {
+        Customer customer = customers.get(name);
+        customer.setName(newName);
+        customers.remove(name);
+        customers.put(newName, customer);
+    }
 }

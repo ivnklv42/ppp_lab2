@@ -89,7 +89,7 @@ public class Main {
                     if (InputCheck.productTitleCheck(newTitle)) {
                         product = onlineStore.getProduct(title);
                         if (product != null) {
-                            product.setTitle(newTitle);
+                            onlineStore.changeProductTitle(title, newTitle);
                         } else {
                             System.out.println("Товар не найден. Попробуйте снова.");
                         }
@@ -152,7 +152,7 @@ public class Main {
                         System.out.println("Введите новое имя и фамилию покупателя:");
                         String newName = console.nextLine();
                         if (InputCheck.customerCheck(newName)) {
-                            customer.setName(newName);
+                            onlineStore.changeCustomerName(name, newName);
                         }
                     } else {
                         System.out.println("Покупатель не найден. Попробуйте снова.");
